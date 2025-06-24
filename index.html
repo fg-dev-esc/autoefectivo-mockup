@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoEfectivo - Empeña tu auto</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+
+<body>
+    <!-- Header Moderno -->
+    <header class="navbar glass">
+        <div class="container">
+            <div class="navbar-content">
+                <a href="#" class="navbar-brand">
+                    <i data-lucide="" class="brand-icon"></i>
+                    <span class="gradient-text">AutoEfectivo</span>
+                </a>
+
+                <nav class="nav-menu">
+                    <a href="#inicio" class="nav-link active">
+                        <i data-lucide="home" size="16"></i>
+                        <span>Inicio</span>
+                    </a>
+                    <a href="#prestamo" class="nav-link">
+                        <i data-lucide="dollar-sign" size="16"></i>
+                        <span>Préstamo</span>
+                    </a>
+                    <a href="#preavaluo" class="nav-link">
+                        <i data-lucide="calculator" size="16"></i>
+                        <span>Preavalúo</span>
+                    </a>
+                    <a href="#sucursales" class="nav-link">
+                        <i data-lucide="map-pin" size="16"></i>
+                        <span>Sucursales</span>
+                    </a>
+                    <a href="#sucursales" class="nav-link">
+                        <i data-lucide="circle-question-mark" size="16"></i>
+                        <span>Preguntas</span>
+                    </a>
+
+                </nav>
+
+                <div class="contact-info">
+                    <a href="tel:5555950926" class="phone-link">
+                        <i data-lucide="phone" size="16"></i>
+                        <span>(55) 5595-0926</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Slider Mejorado -->
+    <section class="hero-slider">
+        <!-- Efectos de partículas -->
+        <div class="particles"></div>
+
+        <!-- Slide 1 -->
+        <div class="slide active" data-theme="green">
+            <div class="slide-bg"></div>
+            <div class="slide-content">
+                <div class="hero-text animate__fadeInLeft">
+                    <span class="hero-badge">
+                        <i data-lucide="trending-up" size="16"></i>
+                        Solución Inmediata
+                    </span>
+                    <h1 class="hero-title">
+                        ¿Adjudicaste unidades y no tienes
+                        <span class="text-gradient">efectivo para pagar?</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        ¡Nosotros tenemos una solución para ti!
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="slide" data-theme="blue">
+            <div class="slide-bg"></div>
+            <div class="slide-content">
+                <div class="hero-text animate__fadeInLeft">
+                    <span class="hero-badge">
+                        <i data-lucide="zap" size="16"></i>
+                        Préstamo Express
+                    </span>
+                    <h1 class="hero-title">
+                        Obtén tu préstamo
+                        <span class="text-gradient">en menos de 2 horas</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Rápido, seguro y sin complicaciones
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- Slide 3 -->
+        <div class="slide" data-theme="orange">
+            <div class="slide-bg"></div>
+            <div class="slide-content">
+                <div class="hero-text animate__fadeInLeft">
+                    <span class="hero-badge">
+                        <i data-lucide="shield-check" size="16"></i>
+                        Seguro Total
+                    </span>
+                    <h1 class="hero-title">
+                        Tu auto
+                        <span class="text-gradient">siempre protegido</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Garantía absoluta y transparencia
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- Slide 4 -->
+        <div class="slide" data-theme="green">
+            <div class="slide-bg"></div>
+            <div class="slide-content">
+                <div class="hero-text animate__fadeInLeft">
+                    <span class="hero-badge">
+                        <i data-lucide="file-check" size="16"></i>
+                        Facturas de Aseguradoras
+                    </span>
+                    <h1 class="hero-title">
+                        Aceptamos
+                        <span class="text-gradient">todo tipo de facturas</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Incluso autos con factura de aseguradora
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controles del slider -->
+        <div class="slider-controls">
+            <button class="slider-arrow prev" onclick="changeSlide(-1)">
+                <i data-lucide="chevron-left"></i>
+            </button>
+            <button class="slider-arrow next" onclick="changeSlide(1)">
+                <i data-lucide="chevron-right"></i>
+            </button>
+        </div>
+
+        <div class="slider-dots">
+            <span class="dot active" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+        </div>
+    </section>
+
+    <!-- Sección de Beneficios Modernizada -->
+    <section class="benefits-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">¿Por qué elegirnos?</span>
+                <h2 class="section-title gradient-text">Los mejores beneficios del mercado</h2>
+                <p class="section-subtitle">Más de 35 sucursales en todo México para atenderte</p>
+            </div>
+
+            <div class="benefits-grid">
+                <div class="benefit-card glass hover-lift">
+                    <div class="benefit-icon">
+                        <i data-lucide="zap"></i>
+                    </div>
+                    <h4>Préstamo Express</h4>
+                    <p>Te prestamos en menos de 2 horas con mínimos requisitos</p>
+                </div>
+
+                <div class="benefit-card glass hover-lift">
+                    <div class="benefit-icon">
+                        <i data-lucide="car"></i>
+                    </div>
+                    <h4>Todo Tipo de Vehículos</h4>
+                    <p>Recibimos autos, motos y equipo pesado en cualquier condición</p>
+                </div>
+
+                <div class="benefit-card glass hover-lift">
+                    <div class="benefit-icon">
+                        <i data-lucide="file-check"></i>
+                    </div>
+                    <h4>Facturas de Aseguradoras</h4>
+                    <p>Aceptamos autos con factura de aseguradoras sin problema</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Esquemas con Cards Modernas -->
+    <section class="schemes-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Nuestros Planes</span>
+                <h2 class="section-title gradient-text">Elige tu Esquema</h2>
+            </div>
+
+            <div class="schemes-grid">
+                <div class="scheme-card glass hover-lift">
+                    <div class="scheme-header">
+                        <div class="scheme-icon">
+                            <i data-lucide="banknote"></i>
+                        </div>
+                        <h3>Empeño Tradicional</h3>
+                        <span class="scheme-badge">Más Popular</span>
+                    </div>
+
+                    <div class="scheme-features">
+                        <div class="feature">
+                            <i data-lucide="check-circle" size="16"></i>
+                            <span>Tasa mensual fija 5%</span>
+                        </div>
+                        <div class="feature">
+                            <i data-lucide="check-circle" size="16"></i>
+                            <span>60% tasa anualizada</span>
+                        </div>
+                        <div class="feature">
+                            <i data-lucide="check-circle" size="16"></i>
+                            <span>Préstamos con garantía de auto</span>
+                        </div>
+                    </div>
+
+                    <div class="scheme-price">
+                        <span class="price-label">Almacenaje desde</span>
+                        <span class="price-value">$1,000</span>
+                        <span class="price-period">MXN</span>
+                    </div>
+
+                    <button class="btn btn-primary btn-block">
+                        Solicitar Ahora
+                        <i data-lucide="arrow-right" size="16"></i>
+                    </button>
+                </div>
+
+                <div class="scheme-card glass hover-lift featured">
+                    <div class="scheme-header">
+                        <div class="scheme-icon">
+                            <i data-lucide="zap"></i>
+                        </div>
+                        <h3>Financiamiento Ventura</h3>
+                        <span class="scheme-badge premium">Premium</span>
+                    </div>
+
+                    <div class="scheme-features">
+                        <div class="feature">
+                            <i data-lucide="check-circle" size="16"></i>
+                            <span>Tasa quincenal 3%</span>
+                        </div>
+                        <div class="feature">
+                            <i data-lucide="check-circle" size="16"></i>
+                            <span>Mensual 5-6%</span>
+                        </div>
+                        <div class="feature">
+                            <i data-lucide="check-circle" size="16"></i>
+                            <span>Para autos adjudicados</span>
+                        </div>
+                    </div>
+
+                    <div class="scheme-price">
+                        <span class="price-label">Almacenaje desde</span>
+                        <span class="price-value">$1,500</span>
+                        <span class="price-period">MXN</span>
+                    </div>
+
+                    <button class="btn btn-secondary btn-block">
+                        Cotizar Ahora
+                        <i data-lucide="arrow-right" size="16"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculadora Mejorada -->
+    <section class="calculator-section">
+        <div class="container">
+            <div class="calculator-wrapper glass">
+                <div class="calculator-header">
+                    <h3 class="gradient-text">Calculadora de Préstamos</h3>
+                    <p>Simula tu préstamo en segundos</p>
+                </div>
+
+                <div class="calculator-body">
+                    <div class="calc-inputs">
+                        <div class="input-group">
+                            <label>Monto del Préstamo</label>
+                            <div class="input-wrapper">
+                                <i data-lucide="dollar-sign"></i>
+                                <input type="number" id="loanAmount" placeholder="30,000" value="30000">
+                                <span class="input-suffix">MXN</span>
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Esquema</label>
+                            <div class="input-wrapper">
+                                <i data-lucide="layers"></i>
+                                <select id="schemeType">
+                                    <option value="tradicional">Empeño Tradicional</option>
+                                    <option value="ventura15">Ventura 15 días</option>
+                                    <option value="ventura30">Ventura 30 días</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <button onclick="calcular()" class="btn btn-primary btn-calculate">
+                            <i data-lucide="calculator"></i>
+                            <span>Calcular</span>
+                        </button>
+                    </div>
+
+                    <div class="calc-results" id="results">
+                        <div class="result-card glass">
+                            <i data-lucide="calendar"></i>
+                            <div>
+                                <span class="result-label">Pago Mensual</span>
+                                <span class="result-value" id="monthlyPayment">$0</span>
+                            </div>
+                        </div>
+
+                        <div class="result-card glass">
+                            <i data-lucide="wallet"></i>
+                            <div>
+                                <span class="result-label">Total a Pagar</span>
+                                <span class="result-value" id="totalPayment">$0</span>
+                            </div>
+                        </div>
+
+                        <div class="result-card glass">
+                            <i data-lucide="percent"></i>
+                            <div>
+                                <span class="result-label">CAT</span>
+                                <span class="result-value" id="catRate">0%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Sucursales -->
+    <section id="sucursales" class="branches-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Nuestras Ubicaciones</span>
+                <h2 class="section-title gradient-text">Más de 35 Sucursales</h2>
+                <p class="section-subtitle">Encuentra la sucursal más cercana a ti</p>
+            </div>
+
+            <div class="branches-grid">
+                <div class="branch-card glass hover-lift">
+                    <div class="branch-icon">
+                        <i data-lucide="map-pin"></i>
+                    </div>
+                    <h4 class="branch-title">Sucursal Centro</h4>
+                    <p class="branch-address">Av. Contreras #246-304<br>Col. Centro, CDMX</p>
+                    <div class="branch-details">
+                        <div class="branch-info">
+                            <i data-lucide="clock" size="14"></i>
+                            <span>Lun - Vie: 9:00 - 18:00</span>
+                        </div>
+                        <div class="branch-info">
+                            <i data-lucide="phone" size="14"></i>
+                            <span>(55) 5595-0926</span>
+                        </div>
+                    </div>
+                    <a href="https://maps.google.com" class="branch-link" target="_blank">
+                        <i data-lucide="navigation" size="14"></i>
+                        <span>Ver en Mapa</span>
+                    </a>
+                </div>
+
+                <div class="branch-card glass hover-lift">
+                    <div class="branch-icon">
+                        <i data-lucide="map-pin"></i>
+                    </div>
+                    <h4 class="branch-title">Sucursal Norte</h4>
+                    <p class="branch-address">Av. Insurgentes Norte #1200<br>Col. Lindavista, CDMX</p>
+                    <div class="branch-details">
+                        <div class="branch-info">
+                            <i data-lucide="clock" size="14"></i>
+                            <span>Lun - Vie: 9:00 - 18:00</span>
+                        </div>
+                        <div class="branch-info">
+                            <i data-lucide="phone" size="14"></i>
+                            <span>(55) 1311-3785</span>
+                        </div>
+                    </div>
+                    <a href="https://maps.google.com" class="branch-link" target="_blank">
+                        <i data-lucide="navigation" size="14"></i>
+                        <span>Ver en Mapa</span>
+                    </a>
+                </div>
+
+                <div class="branch-card glass hover-lift">
+                    <div class="branch-icon">
+                        <i data-lucide="map-pin"></i>
+                    </div>
+                    <h4 class="branch-title">Sucursal Sur</h4>
+                    <p class="branch-address">Av. División del Norte #2850<br>Col. Portales, CDMX</p>
+                    <div class="branch-details">
+                        <div class="branch-info">
+                            <i data-lucide="clock" size="14"></i>
+                            <span>Lun - Vie: 9:00 - 18:00</span>
+                        </div>
+                        <div class="branch-info">
+                            <i data-lucide="phone" size="14"></i>
+                            <span>(55) 5595-0926</span>
+                        </div>
+                    </div>
+                    <a href="https://maps.google.com" class="branch-link" target="_blank">
+                        <i data-lucide="navigation" size="14"></i>
+                        <span>Ver en Mapa</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="branch-contact-cta">
+                <div class="cta-content glass">
+                    <h3>¿No encuentras una sucursal cerca?</h3>
+                    <p>Contáctanos y te ayudamos a encontrar la mejor opción para ti</p>
+                    <div class="cta-buttons">
+                        <a href="tel:5555950926" class="btn btn-primary">
+                            <i data-lucide="phone"></i>
+                            <span>Llamar Ahora</span>
+                        </a>
+                        <a href="#" class="btn btn-secondary">
+                            <i data-lucide="message-circle"></i>
+                            <span>Chat en Línea</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección FAQ -->
+    <section id="preguntas" class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Dudas Frecuentes</span>
+                <h2 class="section-title gradient-text">Preguntas Frecuentes</h2>
+                <p class="section-subtitle">Resolvemos las dudas más comunes sobre nuestros servicios</p>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>¿Qué documentos necesito para empeñar mi auto?</span>
+                        <i data-lucide="chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Necesitas: Factura original del vehículo, tarjeta de circulación vigente, identificación
+                            oficial (INE/IFE), comprobante de domicilio no mayor a 3 meses, y las llaves del vehículo.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>¿En cuánto tiempo recibo mi préstamo?</span>
+                        <i data-lucide="chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Una vez que presentes todos los documentos requeridos y tu auto sea avaluado, recibes tu
+                            préstamo en menos de 2 horas. Nuestro proceso es rápido y eficiente.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>¿Aceptan autos con factura de aseguradora?</span>
+                        <i data-lucide="chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Sí, aceptamos vehículos con factura de aseguradora. Contamos con experiencia en este tipo de
+                            trámites y te apoyamos en todo el proceso.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>¿Puedo recuperar mi auto antes del vencimiento?</span>
+                        <i data-lucide="chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Por supuesto. Puedes liquidar tu préstamo en cualquier momento y recuperar tu vehículo. Solo
+                            debes cubrir el capital prestado más los intereses generados hasta la fecha de pago.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>¿Qué pasa si no puedo pagar a tiempo?</span>
+                        <i data-lucide="chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Te ofrecemos diferentes opciones: renovación del contrato, plan de pagos flexible, o
+                            extensión del plazo. Nuestro objetivo es encontrar la mejor solución para ti.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>¿Mi auto está seguro en sus instalaciones?</span>
+                        <i data-lucide="chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutamente. Contamos con instalaciones seguras, sistema de videovigilancia 24/7, y seguro
+                            contra daños. Tu vehículo estará completamente protegido.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-contact">
+                <div class="faq-contact-card glass">
+                    <div class="faq-contact-icon">
+                        <i data-lucide="help-circle"></i>
+                    </div>
+                    <h3>¿Tienes más preguntas?</h3>
+                    <p>Nuestro equipo está listo para ayudarte con cualquier duda</p>
+                    <a href="tel:5555950926" class="btn btn-primary">
+                        <i data-lucide="phone"></i>
+                        <span>Contactar Ahora</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Moderno -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <div class="footer-logo">
+                            <i data-lucide="car"></i>
+                            <span>AutoEfectivo</span>
+                        </div>
+                        <p>Más de 35 sucursales en todo México</p>
+                        <div class="social-links">
+                            <a href="#" class="social-link">
+                                <i data-lucide="facebook"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i data-lucide="instagram"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i data-lucide="twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="footer-links">
+                        <h4>Enlaces Rápidos</h4>
+                        <a href="#">Préstamo Tradicional</a>
+                        <a href="#">Financiamiento Ventura</a>
+                        <a href="#">Preguntas Frecuentes</a>
+                        <a href="#">Blog</a>
+                    </div>
+
+                    <div class="footer-contact">
+                        <h4>Contacto</h4>
+                        <a href="tel:5555950926" class="contact-item">
+                            <i data-lucide="phone" size="16"></i>
+                            <span>(55) 5595-0926</span>
+                        </a>
+                        <a href="tel:5513113785" class="contact-item">
+                            <i data-lucide="smartphone" size="16"></i>
+                            <span>(55) 1311-3785</span>
+                        </a>
+                        <div class="contact-item">
+                            <i data-lucide="map-pin" size="16"></i>
+                            <span>Av. Contreras #246-304</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2024 AutoEfectivo. Todos los derechos reservados.</p>
+                <p class="footer-legal">CAT: 62% al 240% | Registrado ante PROFECO</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chat Widget Flotante -->
+    <div class="chat-widget">
+        <button class="chat-button">
+            <i data-lucide="message-circle"></i>
+            <span class="chat-badge">1</span>
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Inicializar Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
