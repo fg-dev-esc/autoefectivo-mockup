@@ -1,22 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AutoEfectivo - Empeña tu auto</title>
     <link rel="stylesheet" href="styles.css">
-    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 </head>
 
 <body>
-    <!-- Header Moderno -->
+    <!-- Header -->
     <header class="navbar glass">
         <div class="container">
             <div class="navbar-content">
                 <a href="#" class="navbar-brand">
-                    <i data-lucide="" class="brand-icon"></i>
+                    <i data-lucide="car" class="brand-icon"></i>
                     <span class="gradient-text">AutoEfectivo</span>
                 </a>
 
@@ -37,11 +35,10 @@
                         <i data-lucide="map-pin" size="16"></i>
                         <span>Sucursales</span>
                     </a>
-                    <a href="#sucursales" class="nav-link">
-                        <i data-lucide="circle-question-mark" size="16"></i>
+                    <a href="#preguntas" class="nav-link">
+                        <i data-lucide="help-circle" size="16"></i>
                         <span>Preguntas</span>
                     </a>
-
                 </nav>
 
                 <div class="contact-info">
@@ -54,12 +51,10 @@
         </div>
     </header>
 
-    <!-- Hero Slider Mejorado -->
+    <!-- Hero Slider -->
     <section class="hero-slider">
-        <!-- Efectos de partículas -->
         <div class="particles"></div>
 
-        <!-- Slide 1 -->
         <div class="slide active" data-theme="green">
             <div class="slide-bg"></div>
             <div class="slide-content">
@@ -72,13 +67,11 @@
                         ¿Adjudicaste unidades y no tienes
                         <span class="text-gradient">efectivo para pagar?</span>
                     </h1>
-                    <p class="hero-subtitle">
-                        ¡Nosotros tenemos una solución para ti!
-                    </p>
+                    <p class="hero-subtitle">¡Nosotros tenemos una solución para ti!</p>
                 </div>
             </div>
         </div>
-        <!-- Slide 2 -->
+
         <div class="slide" data-theme="blue">
             <div class="slide-bg"></div>
             <div class="slide-content">
@@ -91,13 +84,11 @@
                         Obtén tu préstamo
                         <span class="text-gradient">en menos de 2 horas</span>
                     </h1>
-                    <p class="hero-subtitle">
-                        Rápido, seguro y sin complicaciones
-                    </p>
+                    <p class="hero-subtitle">Rápido, seguro y sin complicaciones</p>
                 </div>
             </div>
         </div>
-        <!-- Slide 3 -->
+
         <div class="slide" data-theme="orange">
             <div class="slide-bg"></div>
             <div class="slide-content">
@@ -110,33 +101,11 @@
                         Tu auto
                         <span class="text-gradient">siempre protegido</span>
                     </h1>
-                    <p class="hero-subtitle">
-                        Garantía absoluta y transparencia
-                    </p>
-                </div>
-            </div>
-        </div>
-        <!-- Slide 4 -->
-        <div class="slide" data-theme="green">
-            <div class="slide-bg"></div>
-            <div class="slide-content">
-                <div class="hero-text animate__fadeInLeft">
-                    <span class="hero-badge">
-                        <i data-lucide="file-check" size="16"></i>
-                        Facturas de Aseguradoras
-                    </span>
-                    <h1 class="hero-title">
-                        Aceptamos
-                        <span class="text-gradient">todo tipo de facturas</span>
-                    </h1>
-                    <p class="hero-subtitle">
-                        Incluso autos con factura de aseguradora
-                    </p>
+                    <p class="hero-subtitle">Garantía absoluta y transparencia</p>
                 </div>
             </div>
         </div>
 
-        <!-- Controles del slider -->
         <div class="slider-controls">
             <button class="slider-arrow prev" onclick="changeSlide(-1)">
                 <i data-lucide="chevron-left"></i>
@@ -150,11 +119,10 @@
             <span class="dot active" onclick="currentSlide(1)"></span>
             <span class="dot" onclick="currentSlide(2)"></span>
             <span class="dot" onclick="currentSlide(3)"></span>
-            <span class="dot" onclick="currentSlide(4)"></span>
         </div>
     </section>
 
-    <!-- Sección de Beneficios Modernizada -->
+    <!-- Beneficios -->
     <section class="benefits-section">
         <div class="container">
             <div class="section-header">
@@ -191,7 +159,7 @@
         </div>
     </section>
 
-    <!-- Esquemas con Cards Modernas -->
+    <!-- Esquemas -->
     <section class="schemes-section">
         <div class="container">
             <div class="section-header">
@@ -275,75 +243,78 @@
         </div>
     </section>
 
-    <!-- Calculadora Mejorada -->
-    <section class="calculator-section">
-        <div class="container">
-            <div class="calculator-wrapper glass">
-                <div class="calculator-header">
-                    <h3 class="gradient-text">Calculadora de Préstamos</h3>
-                    <p>Simula tu préstamo en segundos</p>
-                </div>
+    <!-- Calculadora - Opción 1: Horizontal -->
+<section class="calculator-section">
+    <div class="container">
+        <div class="calculator-wrapper glass">
+            <div class="calculator-header">
+                <h3 class="gradient-text">Calculadora de Préstamos</h3>
+                <p>Simula tu préstamo en segundos</p>
+            </div>
 
-                <div class="calculator-body">
-                    <div class="calc-inputs">
-                        <div class="input-group">
-                            <label>Monto del Préstamo</label>
-                            <div class="input-wrapper">
-                                <i data-lucide="dollar-sign"></i>
-                                <input type="number" id="loanAmount" placeholder="30,000" value="30000">
-                                <span class="input-suffix">MXN</span>
-                            </div>
+            <div class="calculator-body">
+                <!-- Inputs en una sola fila centrada -->
+                <div class="calc-inputs-horizontal">
+                    <div class="input-field">
+                        <label>Monto del Préstamo</label>
+                        <div class="input-container">
+                            <span class="currency-symbol">$</span>
+                            <input type="number" id="loanAmount" placeholder="30,000" value="30000">
+                            <span class="currency-label">MXN</span>
                         </div>
-
-                        <div class="input-group">
-                            <label>Esquema</label>
-                            <div class="input-wrapper">
-                                <i data-lucide="layers"></i>
-                                <select id="schemeType">
-                                    <option value="tradicional">Empeño Tradicional</option>
-                                    <option value="ventura15">Ventura 15 días</option>
-                                    <option value="ventura30">Ventura 30 días</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <button onclick="calcular()" class="btn btn-primary btn-calculate">
-                            <i data-lucide="calculator"></i>
-                            <span>Calcular</span>
-                        </button>
                     </div>
 
-                    <div class="calc-results" id="results">
-                        <div class="result-card glass">
-                            <i data-lucide="calendar"></i>
-                            <div>
-                                <span class="result-label">Pago Mensual</span>
-                                <span class="result-value" id="monthlyPayment">$0</span>
-                            </div>
-                        </div>
+                    <div class="divider-vertical"></div>
 
-                        <div class="result-card glass">
-                            <i data-lucide="wallet"></i>
-                            <div>
-                                <span class="result-label">Total a Pagar</span>
-                                <span class="result-value" id="totalPayment">$0</span>
-                            </div>
-                        </div>
+                    <div class="input-field">
+                        <label>Esquema</label>
+                        <select id="schemeType" class="scheme-select">
+                            <option value="tradicional">Empeño Tradicional</option>
+                            <option value="ventura15">Ventura 15 días</option>
+                            <option value="ventura30">Ventura 30 días</option>
+                        </select>
+                    </div>
 
-                        <div class="result-card glass">
-                            <i data-lucide="percent"></i>
-                            <div>
-                                <span class="result-label">CAT</span>
-                                <span class="result-value" id="catRate">0%</span>
-                            </div>
+                    <div class="divider-vertical"></div>
+
+                    <button onclick="calcular()" class="btn-calculate-modern">
+                        <i data-lucide="calculator"></i>
+                        <span>Calcular</span>
+                    </button>
+                </div>
+
+                <!-- Resultados en cards minimalistas -->
+                <div class="results-grid">
+                    <div class="result-card-modern">
+                        <div class="result-header">
+                            <i data-lucide="calendar" class="result-icon-mini"></i>
+                            <h4>Pago Mensual</h4>
                         </div>
+                        <div class="result-amount" id="monthlyPayment">$0</div>
+                    </div>
+
+                    <div class="result-card-modern featured">
+                        <div class="result-header">
+                            <i data-lucide="wallet" class="result-icon-mini"></i>
+                            <h4>Total a Pagar</h4>
+                        </div>
+                        <div class="result-amount" id="totalPayment">$0</div>
+                    </div>
+
+                    <div class="result-card-modern">
+                        <div class="result-header">
+                            <i data-lucide="percent" class="result-icon-mini"></i>
+                            <h4>CAT</h4>
+                        </div>
+                        <div class="result-amount" id="catRate">0%</div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Sección de Sucursales -->
+    <!-- Sucursales -->
     <section id="sucursales" class="branches-section">
         <div class="container">
             <div class="section-header">
@@ -419,27 +390,10 @@
                     </a>
                 </div>
             </div>
-
-            <div class="branch-contact-cta">
-                <div class="cta-content glass">
-                    <h3>¿No encuentras una sucursal cerca?</h3>
-                    <p>Contáctanos y te ayudamos a encontrar la mejor opción para ti</p>
-                    <div class="cta-buttons">
-                        <a href="tel:5555950926" class="btn btn-primary">
-                            <i data-lucide="phone"></i>
-                            <span>Llamar Ahora</span>
-                        </a>
-                        <a href="#" class="btn btn-secondary">
-                            <i data-lucide="message-circle"></i>
-                            <span>Chat en Línea</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
-    <!-- Sección FAQ -->
+    <!-- FAQ -->
     <section id="preguntas" class="faq-section">
         <div class="container">
             <div class="section-header">
@@ -455,9 +409,7 @@
                         <i data-lucide="chevron-down"></i>
                     </button>
                     <div class="faq-answer">
-                        <p>Necesitas: Factura original del vehículo, tarjeta de circulación vigente, identificación
-                            oficial (INE/IFE), comprobante de domicilio no mayor a 3 meses, y las llaves del vehículo.
-                        </p>
+                        <p>Necesitas: Factura original del vehículo, tarjeta de circulación vigente, identificación oficial (INE/IFE), comprobante de domicilio no mayor a 3 meses, y las llaves del vehículo.</p>
                     </div>
                 </div>
 
@@ -467,8 +419,7 @@
                         <i data-lucide="chevron-down"></i>
                     </button>
                     <div class="faq-answer">
-                        <p>Una vez que presentes todos los documentos requeridos y tu auto sea avaluado, recibes tu
-                            préstamo en menos de 2 horas. Nuestro proceso es rápido y eficiente.</p>
+                        <p>Una vez que presentes todos los documentos requeridos y tu auto sea avaluado, recibes tu préstamo en menos de 2 horas. Nuestro proceso es rápido y eficiente.</p>
                     </div>
                 </div>
 
@@ -478,8 +429,7 @@
                         <i data-lucide="chevron-down"></i>
                     </button>
                     <div class="faq-answer">
-                        <p>Sí, aceptamos vehículos con factura de aseguradora. Contamos con experiencia en este tipo de
-                            trámites y te apoyamos en todo el proceso.</p>
+                        <p>Sí, aceptamos vehículos con factura de aseguradora. Contamos con experiencia en este tipo de trámites y te apoyamos en todo el proceso.</p>
                     </div>
                 </div>
 
@@ -489,134 +439,96 @@
                         <i data-lucide="chevron-down"></i>
                     </button>
                     <div class="faq-answer">
-                        <p>Por supuesto. Puedes liquidar tu préstamo en cualquier momento y recuperar tu vehículo. Solo
-                            debes cubrir el capital prestado más los intereses generados hasta la fecha de pago.</p>
+                        <p>Por supuesto. Puedes liquidar tu préstamo en cualquier momento y recuperar tu vehículo. Solo debes cubrir el capital prestado más los intereses generados hasta la fecha de pago.</p>
                     </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" onclick="toggleFAQ(this)">
-                        <span>¿Qué pasa si no puedo pagar a tiempo?</span>
-                        <i data-lucide="chevron-down"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Te ofrecemos diferentes opciones: renovación del contrato, plan de pagos flexible, o
-                            extensión del plazo. Nuestro objetivo es encontrar la mejor solución para ti.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" onclick="toggleFAQ(this)">
-                        <span>¿Mi auto está seguro en sus instalaciones?</span>
-                        <i data-lucide="chevron-down"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Absolutamente. Contamos con instalaciones seguras, sistema de videovigilancia 24/7, y seguro
-                            contra daños. Tu vehículo estará completamente protegido.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="faq-contact">
-                <div class="faq-contact-card glass">
-                    <div class="faq-contact-icon">
-                        <i data-lucide="help-circle"></i>
-                    </div>
-                    <h3>¿Tienes más preguntas?</h3>
-                    <p>Nuestro equipo está listo para ayudarte con cualquier duda</p>
-                    <a href="tel:5555950926" class="btn btn-primary">
-                        <i data-lucide="phone"></i>
-                        <span>Contactar Ahora</span>
-                    </a>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Sección de Contacto Unificada -->
     <section class="contact-section">
-    <div class="container">
-        <div class="contact-grid">
-            <!-- Formulario Principal -->
-            <div class="contact-form-container glass">
-                <div class="form-header">
-                    <h3>¿Listo para tu préstamo?</h3>
-                    <p>Completa el formulario y te contactamos en menos de 30 minutos</p>
-                </div>
-                
-                <form class="contact-form-main" id="contactForm">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <input type="text" placeholder="Nombre completo" required>
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-form-container glass">
+                    <div class="form-header">
+                        <h3>¿Listo para tu préstamo?</h3>
+                        <p>Completa el formulario y te contactamos en menos de 30 minutos</p>
+                    </div>
+                    
+                    <form class="contact-form-main" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" placeholder="Nombre completo" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" placeholder="Teléfono" required>
+                            </div>
                         </div>
+                        
                         <div class="form-group">
-                            <input type="tel" placeholder="Teléfono" required>
+                            <input type="email" placeholder="Correo electrónico" required>
                         </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <input type="email" placeholder="Correo electrónico" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <select required>
-                            <option value="">¿Qué necesitas?</option>
-                            <option value="prestamo">Solicitar préstamo</option>
-                            <option value="informacion">Solo información</option>
-                            <option value="sucursal">Ubicar sucursal</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <textarea placeholder="Cuéntanos sobre tu vehículo o dudas (opcional)" rows="3"></textarea>
-                    </div>
-                    
-                    <button type="submit" class="btn btn-primary btn-block">
-                        <i data-lucide="send"></i>
-                        Enviar Solicitud
-                    </button>
-                </form>
-            </div>
-            
-            <!-- Métodos de Contacto Directo -->
-            <div class="contact-methods">
-                <div class="contact-method-card glass">
-                    <div class="method-icon">
-                        <i data-lucide="phone"></i>
-                    </div>
-                    <h4>Llama Ahora</h4>
-                    <p>Línea directa para atención inmediata</p>
-                    <a href="tel:5555950926" class="btn btn-secondary">
-                        (55) 5595-0926
-                    </a>
+                        
+                        <div class="form-group">
+                            <select required>
+                                <option value="">¿Qué necesitas?</option>
+                                <option value="prestamo">Solicitar préstamo</option>
+                                <option value="informacion">Solo información</option>
+                                <option value="sucursal">Ubicar sucursal</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <textarea placeholder="Cuéntanos sobre tu vehículo o dudas (opcional)" rows="4"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-block">
+                            <i data-lucide="send"></i>
+                            Enviar Solicitud
+                        </button>
+                    </form>
                 </div>
                 
-                <div class="contact-method-card glass">
-                    <div class="method-icon">
-                        <i data-lucide="message-circle"></i>
+                <div class="contact-methods">
+                    <div class="contact-method-card glass">
+                        <div class="method-icon">
+                            <i data-lucide="phone"></i>
+                        </div>
+                        <h4>Llama Ahora</h4>
+                        <p>Línea directa para atención inmediata</p>
+                        <a href="tel:5555950926" class="btn btn-secondary">
+                            (55) 5595-0926
+                        </a>
                     </div>
-                    <h4>WhatsApp</h4>
-                    <p>Chatea con nosotros al instante</p>
-                    <a href="https://wa.me/525555950926" class="btn btn-secondary">
-                        Iniciar Chat
-                    </a>
-                </div>
-                
-                <div class="contact-method-card glass">
-                    <div class="method-icon">
-                        <i data-lucide="map-pin"></i>
+                    
+                    <div class="contact-method-card glass">
+                        <div class="method-icon">
+                            <i data-lucide="message-circle"></i>
+                        </div>
+                        <h4>WhatsApp</h4>
+                        <p>Chatea con nosotros al instante</p>
+                        <a href="https://wa.me/525555950926" class="btn btn-secondary">
+                            Iniciar Chat
+                        </a>
                     </div>
-                    <h4>Visítanos</h4>
-                    <p>35+ sucursales en todo México</p>
-                    <a href="#sucursales" class="btn btn-secondary">
-                        Ver Ubicaciones
-                    </a>
+                    
+                    <div class="contact-method-card glass">
+                        <div class="method-icon">
+                            <i data-lucide="map-pin"></i>
+                        </div>
+                        <h4>Visítanos</h4>
+                        <p>35+ sucursales en todo México</p>
+                        <a href="#sucursales" class="btn btn-secondary">
+                            Ver Ubicaciones
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-    <!-- Footer Moderno -->
+    <!-- Footer -->
     <footer class="footer">
         <div class="footer-top">
             <div class="container">
@@ -675,7 +587,7 @@
         </div>
     </footer>
 
-    <!-- Chat Widget Flotante -->
+    <!-- Chat Widget -->
     <div class="chat-widget">
         <button class="chat-button">
             <i data-lucide="message-circle"></i>
@@ -685,9 +597,7 @@
 
     <script src="script.js"></script>
     <script>
-        // Inicializar Lucide icons
         lucide.createIcons();
     </script>
 </body>
-
 </html>
