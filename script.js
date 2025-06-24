@@ -100,3 +100,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+// Agregar al final de script.js
+function toggleFAQ(button) {
+    const faqItem = button.parentElement;
+    const answer = faqItem.querySelector('.faq-answer');
+    const isActive = button.classList.contains('active');
+    
+    // Cerrar todas las FAQs
+    document.querySelectorAll('.faq-question').forEach(q => {
+        q.classList.remove('active');
+        q.parentElement.querySelector('.faq-answer').classList.remove('active');
+    });
+    
+    // Si no estaba activa, abrir esta
+    if (!isActive) {
+        button.classList.add('active');
+        answer.classList.add('active');
+    }
+}
