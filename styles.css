@@ -176,9 +176,9 @@ body {
  height: 100vh;
  overflow: hidden;
  background: var(--bg-secondary);
- background-image: url('https://img.freepik.com/foto-gratis/vista-lateral-familia-viajando-coche_23-2149447462.jpg?semt=ais_items_boosted&w=740');
+ background-image: url('./img/hero-prestium.png');
  background-size: cover;
- background-position: center;
+ background-position: inherit;
  background-repeat: no-repeat;
 }
 
