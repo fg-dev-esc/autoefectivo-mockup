@@ -2323,3 +2323,351 @@ body {
     max-width: calc(100% - 1rem) !important;
   }
 }
+/* ===== NAVBAR RESPONSIVO ===== */
+
+/* Botón hamburguesa - oculto por defecto */
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  gap: 4px;
+  z-index: 1001;
+  position: relative;
+  transition: var(--transition);
+}
+
+.hamburger-line {
+  width: 24px;
+  height: 3px;
+  background: var(--text-primary);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+/* Animación del hamburger cuando está activo */
+.mobile-menu-toggle.active .hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.mobile-menu-toggle.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-toggle.active .hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Menú mobile - oculto por defecto */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 320px;
+  height: 100vh;
+  background: var(--bg-card);
+  backdrop-filter: blur(20px);
+  border-left: 1px solid var(--border-color);
+  z-index: 1002;
+  transition: right 0.3s ease;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-menu.active {
+  right: 0;
+}
+
+/* Header del menú mobile */
+.mobile-menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  background: var(--bg-tertiary);
+}
+
+.mobile-logo {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
+.mobile-menu-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: var(--bg-hover);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.mobile-menu-close:hover {
+  background: var(--accent-red);
+  color: white;
+  border-color: var(--accent-red);
+}
+
+/* Links del menú mobile */
+.mobile-menu-links {
+  flex: 1;
+  padding: 1rem 0;
+}
+
+.mobile-nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  color: var(--text-primary);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border-color);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.mobile-nav-link::before {
+  content: '';
+  position: absolute;
+  left: -100%;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(176, 31, 24, 0.1), transparent);
+  transition: left 0.3s ease;
+}
+
+.mobile-nav-link:hover::before {
+  left: 100%;
+}
+
+.mobile-nav-link:hover {
+  background: var(--bg-hover);
+  color: var(--accent-green);
+  padding-left: 2rem;
+}
+
+.mobile-nav-link:active {
+  background: rgba(176, 31, 24, 0.1);
+  transform: scale(0.98);
+}
+
+.mobile-nav-link i:first-child {
+  color: var(--accent-green);
+  margin-right: 1rem;
+}
+
+.mobile-nav-link span {
+  flex: 1;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.mobile-nav-link .chevron {
+  color: var(--text-muted);
+  transition: var(--transition);
+}
+
+.mobile-nav-link:hover .chevron {
+  color: var(--accent-green);
+  transform: translateX(4px);
+}
+
+/* Botones de contacto en mobile */
+.mobile-menu-contact {
+  padding: 1.5rem;
+  border-top: 1px solid var(--border-color);
+  background: var(--bg-tertiary);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mobile-phone-btn,
+.mobile-whatsapp-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.mobile-phone-btn {
+  background: var(--accent-green);
+  color: white;
+  box-shadow: 0 4px 14px rgba(176, 31, 24, 0.3);
+}
+
+.mobile-phone-btn:hover {
+  background: var(--accent-green-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(176, 31, 24, 0.4);
+}
+
+.mobile-whatsapp-btn {
+  background: #25D366;
+  color: white;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
+}
+
+.mobile-whatsapp-btn:hover {
+  background: #128C7E;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+
+/* Overlay para cerrar el menú */
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 1001;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Ocultar menús según pantalla */
+.desktop-menu,
+.desktop-contact {
+  display: flex;
+}
+
+.mobile-menu {
+  display: none;
+}
+
+/* ===== MEDIA QUERIES PARA RESPONSIVO ===== */
+
+@media (max-width: 992px) {
+  /* Ocultar menú desktop y mostrar hamburguesa */
+  .desktop-menu,
+  .desktop-contact {
+    display: none;
+  }
+  
+  .mobile-menu-toggle {
+    display: flex;
+  }
+  
+  .mobile-menu {
+    display: flex;
+  }
+  
+  /* Ajustar logo en mobile */
+  .navbar-brand img {
+    height: 80px;
+    max-width: 400px;
+  }
+  
+  /* Ajustar contenido con navbar fijo */
+  .hero-slider {
+    margin-top: 120px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-brand img {
+    height: 60px;
+    max-width: 300px;
+  }
+  
+  .hero-slider {
+    margin-top: 100px;
+  }
+  
+  .mobile-menu {
+    width: 100%;
+    right: -100%;
+  }
+  
+  .mobile-menu.active {
+    right: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-brand img {
+    height: 50px;
+    max-width: 250px;
+  }
+  
+  .hero-slider {
+    margin-top: 90px;
+  }
+  
+  .mobile-menu-header {
+    padding: 1rem;
+  }
+  
+  .mobile-nav-link {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+  
+  .mobile-menu-contact {
+    padding: 1rem;
+  }
+}
+
+/* ===== FIX PARA BODY SCROLL ===== */
+body.mobile-menu-open {
+  overflow: hidden;
+  height: 100vh;
+}
+
+/* ===== ANIMACIONES ADICIONALES ===== */
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.mobile-menu.active {
+  animation: slideInRight 0.3s ease-out;
+}
+
+/* ===== ESTADOS ACTIVOS DE NAVEGACIÓN ===== */
+.mobile-nav-link.active {
+  background: rgba(176, 31, 24, 0.1);
+  color: var(--accent-green);
+  border-left: 4px solid var(--accent-green);
+}
+
+.mobile-nav-link.active .chevron {
+  color: var(--accent-green);
+  transform: rotate(90deg);
+}

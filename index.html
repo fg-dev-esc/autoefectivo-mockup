@@ -13,41 +13,106 @@
 
 <body>
     <!-- Header -->
-    <header class="navbar glass">
-        <div class="container">
-            <div class="navbar-content">
-                <a href="#" class="navbar-brand">
-                    <img src="./img/logo-prestium-transparente.png" alt="Prestium" class="brand-logo">
+    <!-- Header -->
+<header class="navbar glass">
+    <div class="container">
+        <div class="navbar-content">
+            <a href="#" class="navbar-brand">
+                <img src="./img/logo-prestium-transparente.png" alt="Prestium" class="brand-logo">
+            </a>
+
+            <!-- Menu hamburguesa button -->
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+
+            <!-- Menu desktop -->
+            <nav class="nav-menu desktop-menu">
+                <a href="#prestamo" class="nav-link">
+                    <i data-lucide="dollar-sign" size="16"></i>
+                    <span>Préstamo</span>
                 </a>
+                <a href="#preavaluo" class="nav-link">
+                    <i data-lucide="calculator" size="16"></i>
+                    <span>Preavalúo</span>
+                </a>
+                <a href="#sucursales" class="nav-link">
+                    <i data-lucide="map-pin" size="16"></i>
+                    <span>Sucursales</span>
+                </a>
+                <a href="#preguntas" class="nav-link">
+                    <i data-lucide="help-circle" size="16"></i>
+                    <span>Preguntas</span>
+                </a>
+            </nav>
 
-                
-                    <a href="#prestamo" class="nav-link">
-                        <i data-lucide="dollar-sign" size="16"></i>
+            <!-- Menu mobile -->
+            <nav class="nav-menu mobile-menu" id="mobileMenu">
+                <div class="mobile-menu-header">
+                    <img src="./img/logo-prestium-transparente.png" alt="Prestium" class="mobile-logo">
+                    <button class="mobile-menu-close" id="mobileMenuClose">
+                        <i data-lucide="x" size="24"></i>
+                    </button>
+                </div>
+                <div class="mobile-menu-links">
+                    <a href="#inicio" class="mobile-nav-link">
+                        <i data-lucide="home" size="20"></i>
+                        <span>Inicio</span>
+                        <i data-lucide="chevron-right" size="16" class="chevron"></i>
+                    </a>
+                    <a href="#prestamo" class="mobile-nav-link">
+                        <i data-lucide="dollar-sign" size="20"></i>
                         <span>Préstamo</span>
+                        <i data-lucide="chevron-right" size="16" class="chevron"></i>
                     </a>
-                    <a href="#preavaluo" class="nav-link">
-                        <i data-lucide="calculator" size="16"></i>
+                    <a href="#preavaluo" class="mobile-nav-link">
+                        <i data-lucide="calculator" size="20"></i>
                         <span>Preavalúo</span>
+                        <i data-lucide="chevron-right" size="16" class="chevron"></i>
                     </a>
-                    <a href="#sucursales" class="nav-link">
-                        <i data-lucide="map-pin" size="16"></i>
+                    <a href="#sucursales" class="mobile-nav-link">
+                        <i data-lucide="map-pin" size="20"></i>
                         <span>Sucursales</span>
+                        <i data-lucide="chevron-right" size="16" class="chevron"></i>
                     </a>
-                    <a href="#preguntas" class="nav-link">
-                        <i data-lucide="help-circle" size="16"></i>
+                    <a href="#preguntas" class="mobile-nav-link">
+                        <i data-lucide="help-circle" size="20"></i>
                         <span>Preguntas</span>
+                        <i data-lucide="chevron-right" size="16" class="chevron"></i>
                     </a>
-                </nav>
-
-                <div class="contact-info">
-                    <a href="tel:5555950926" class="phone-link">
-                        <i data-lucide="phone" size="16"></i>
-                        <span>(55) 5595-0926</span>
+                    <a href="#contacto" class="mobile-nav-link">
+                        <i data-lucide="mail" size="20"></i>
+                        <span>Contacto</span>
+                        <i data-lucide="chevron-right" size="16" class="chevron"></i>
                     </a>
                 </div>
+                <div class="mobile-menu-contact">
+                    <a href="tel:5555950926" class="mobile-phone-btn">
+                        <i data-lucide="phone" size="20"></i>
+                        <span>(55) 5595-0926</span>
+                    </a>
+                    <a href="https://wa.me/525555950926" class="mobile-whatsapp-btn" target="_blank">
+                        <i data-lucide="message-circle" size="20"></i>
+                        <span>WhatsApp</span>
+                    </a>
+                </div>
+            </nav>
+
+            <!-- Teléfono desktop -->
+            <div class="contact-info desktop-contact">
+                <a href="tel:5555950926" class="phone-link">
+                    <i data-lucide="phone" size="16"></i>
+                    <span>(55) 5595-0926</span>
+                </a>
             </div>
         </div>
-    </header>
+    </div>
+    
+    <!-- Overlay para mobile menu -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+</header>
 
     <!-- Hero Slider -->
     <section class="hero-slider" id="inicio">
