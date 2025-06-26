@@ -1049,7 +1049,7 @@ body {
   flex-shrink: 0;
 }
 
-/* Branches Section */
+/* Branches Section - Google Maps */
 .branches-section {
   padding: 5rem 0;
   background: var(--bg-primary);
@@ -1057,19 +1057,19 @@ body {
 
 .branches-content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 400px 1fr;
   gap: 3rem;
   margin-top: 3rem;
 }
 
-.zone-selector {
+.search-box {
   padding: 1.5rem;
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-color);
   margin-bottom: 2rem;
 }
 
-.zone-selector label {
+.search-box label {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -1078,80 +1078,96 @@ body {
   color: var(--text-primary);
 }
 
-.zone-selector select {
-  width: 100%;
+.search-input-container {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.search-input-container input {
+  flex: 1;
   padding: 0.75rem;
   background: var(--bg-tertiary);
   border: 1px solid var(--border-color);
   border-radius: var(--radius);
   color: var(--text-primary);
   font-size: 1rem;
-  cursor: pointer;
-  transition: var(--transition);
 }
 
-.zone-selector select:focus {
+.search-input-container input:focus {
   outline: none;
   border-color: var(--accent-green);
   box-shadow: 0 0 0 3px rgba(176, 31, 24, 0.1);
 }
 
+.search-btn {
+  padding: 0.75rem 1rem;
+  background: var(--accent-green);
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+}
+
+.search-btn:hover {
+  background: var(--accent-green-hover);
+  transform: translateY(-2px);
+}
+
 .branches-list {
-  max-height: 600px;
+  max-height: 500px;
   overflow-y: auto;
   padding-right: 1rem;
 }
 
-.zone-group {
-  margin-bottom: 2rem;
-}
-
-.zone-group h3 {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  color: var(--accent-green);
-  font-size: 1.125rem;
-  margin-bottom: 1rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--accent-green);
-}
-
-.branch-card {
-  padding: 2rem;
-  border-radius: var(--radius-lg);
+.branch-item {
+  padding: 1.5rem;
+  background: var(--bg-card);
   border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
   margin-bottom: 1rem;
   transition: var(--transition);
+  cursor: pointer;
 }
 
-.branch-card:hover {
-  transform: translateY(-4px);
+.branch-item:hover {
+  transform: translateY(-2px);
   border-color: var(--accent-green);
 }
 
-.branch-icon {
-  width: 50px;
-  height: 50px;
+.branch-item.active {
+  border-color: var(--accent-green);
+  background: rgba(176, 31, 24, 0.05);
+}
+
+.branch-name {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.branch-name .branch-icon {
+  width: 32px;
+  height: 32px;
   background: rgba(176, 31, 24, 0.1);
   border-radius: var(--radius);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1.5rem;
 }
 
-.branch-icon i {
+.branch-name .branch-icon i {
   color: var(--accent-green);
-  width: 24px;
-  height: 24px;
-}
-
-.branch-title {
-  font-size: 1.25rem;
-  font-weight: 700;
-  margin-bottom: 0.75rem;
-  color: var(--text-primary);
+  width: 16px;
+  height: 16px;
 }
 
 .branch-address {
@@ -1159,8 +1175,8 @@ body {
   align-items: flex-start;
   gap: 0.5rem;
   color: var(--text-secondary);
-  margin-bottom: 1.5rem;
-  line-height: 1.6;
+  margin-bottom: 1rem;
+  line-height: 1.5;
 }
 
 .branch-address i {
@@ -1169,49 +1185,74 @@ body {
   flex-shrink: 0;
 }
 
-.branch-details {
-  margin-bottom: 1.5rem;
+.branch-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
 }
 
-.branch-info {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 0.5rem;
+.branch-distance {
+  background: var(--bg-tertiary);
+  color: var(--accent-green);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.branch-phone {
   color: var(--text-secondary);
   font-size: 0.875rem;
 }
 
-.branch-info i {
+.branch-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.branch-action-btn {
+  flex: 1;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border-color);
+  background: transparent;
+  color: var(--text-secondary);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  text-decoration: none;
+}
+
+.branch-action-btn:hover {
+  border-color: var(--accent-green);
   color: var(--accent-green);
 }
 
-.branch-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
+.branch-action-btn.primary {
   background: var(--accent-green);
+  border-color: var(--accent-green);
   color: white;
-  text-decoration: none;
-  border-radius: var(--radius);
-  font-weight: 600;
-  transition: var(--transition);
 }
 
-.branch-link:hover {
+.branch-action-btn.primary:hover {
   background: var(--accent-green-hover);
-  transform: translateY(-2px);
 }
 
-.branches-map {
-  height: 600px;
+/* Google Maps Container */
+.google-map {
+  height: 500px;
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-color);
   overflow: hidden;
+  position: relative;
 }
 
-.map-placeholder {
+.map-loading {
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -1221,9 +1262,147 @@ body {
   color: var(--text-secondary);
 }
 
-.map-placeholder i {
+.map-loading i {
   color: var(--accent-green);
   margin-bottom: 1rem;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.map-controls {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.map-control-btn {
+  flex: 1;
+  padding: 0.75rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 600;
+}
+
+.map-control-btn:hover {
+  background: var(--bg-hover);
+  border-color: var(--accent-green);
+  color: var(--accent-green);
+}
+
+/* Sucursal Destacada */
+.featured-branch {
+  margin-top: 3rem;
+  padding: 2rem;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-color);
+  background: linear-gradient(135deg, rgba(176, 31, 24, 0.05), rgba(255, 146, 52, 0.05));
+}
+
+.featured-branch-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.featured-branch-info h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.featured-branch-info h3 i {
+  color: var(--accent-orange);
+}
+
+.featured-address {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.featured-address i {
+  color: var(--accent-green);
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+}
+
+.featured-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.detail-item i {
+  color: var(--accent-green);
+  flex-shrink: 0;
+}
+
+.detail-item a {
+  color: var(--accent-green);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.detail-item a:hover {
+  text-decoration: underline;
+}
+
+.featured-branch-actions {
+  display: flex;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .branches-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .featured-branch-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .featured-branch-actions {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .search-input-container {
+    flex-direction: column;
+  }
+  
+  .map-controls {
+    flex-direction: column;
+  }
 }
 
 /* FAQ Section */
@@ -1846,4 +2025,134 @@ body {
   .scheme-card.featured:hover {
     transform: translateY(-4px);
   }
+}
+/* Estilos adicionales para Google Maps */
+.nearest-badge {
+    background: var(--accent-green);
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--radius);
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-left: 0.5rem;
+}
+
+.branch-item.nearest {
+    border-color: var(--accent-green);
+    background: rgba(176, 31, 24, 0.05);
+}
+
+.map-info-window {
+    padding: 1rem;
+    max-width: 300px;
+}
+
+.map-info-window h3 {
+    margin-bottom: 0.75rem;
+    color: var(--text-primary);
+    font-size: 1.125rem;
+}
+
+.map-info-window p {
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+.info-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.info-btn {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border-color);
+    background: var(--bg-card);
+    color: var(--text-primary);
+    text-decoration: none;
+    border-radius: var(--radius);
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.info-btn.primary {
+    background: var(--accent-green);
+    border-color: var(--accent-green);
+    color: white;
+}
+
+.info-btn:hover {
+    border-color: var(--accent-green);
+    color: var(--accent-green);
+}
+
+.info-btn.primary:hover {
+    background: var(--accent-green-hover);
+}
+
+.user-location-info {
+    padding: 0.5rem;
+    text-align: center;
+}
+
+.user-location-info h4 {
+    margin-bottom: 0.5rem;
+    color: var(--accent-orange);
+}
+
+.route-info-modal {
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    padding: 1.5rem;
+    max-width: 350px;
+}
+
+.route-info-content h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.route-details {
+    margin-bottom: 1rem;
+}
+
+.route-detail {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+.route-detail i {
+    color: var(--accent-green);
+    flex-shrink: 0;
+}
+
+.route-actions {
+    text-align: center;
+}
+
+/* Responsive para Google Maps */
+@media (max-width: 768px) {
+    .google-map {
+        height: 400px;
+    }
+    
+    .branch-actions {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .branch-action-btn {
+        flex: none;
+    }
 }

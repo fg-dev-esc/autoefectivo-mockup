@@ -653,115 +653,123 @@
     </section>
 
     <!-- Branches Section -->
-    <section id="sucursales" class="branches-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-badge">
-                    <i data-lucide="map-pin" size="16"></i>
-                    Nuestras Ubicaciones
-                </span>
-                <h2 class="section-title gradient-text">Más de 35 Sucursales</h2>
-                <p class="section-subtitle">Encuentra la sucursal más cercana a ti</p>
-            </div>
+<section id="sucursales" class="branches-section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-badge">
+                <i data-lucide="map-pin" size="16"></i>
+                Nuestras Ubicaciones
+            </span>
+            <h2 class="section-title gradient-text">Más de 35 Sucursales</h2>
+            <p class="section-subtitle">Encuentra la sucursal más cercana a ti</p>
+        </div>
 
-            <div class="branches-content">
-                <div class="branches-left">
-                    <div class="zone-selector glass">
-                        <label for="zoneSelect">
-                            <i data-lucide="filter" size="16"></i>
-                            Selecciona una zona:
-                        </label>
-                        <select id="zoneSelect" onchange="showZone(this.value)">
-                            <option value="">Todas las zonas</option>
-                            <option value="centro-san-jeronimo">ZONA CENTRO (SAN JERÓNIMO)</option>
-                            <option value="centro-aguascalientes">ZONA CENTRO (AGUASCALIENTES)</option>
-                            <option value="centro-guadalajara">ZONA CENTRO (GUADALAJARA)</option>
-                            <option value="centro-morelia">ZONA CENTRO (MORELIA)</option>
-                            <option value="centro-toluca">ZONA CENTRO (TOLUCA)</option>
-                            <option value="centro-zacatecas">ZONA CENTRO (ZACATECAS)</option>
-                            <option value="metro-cuautitlan">ZONA METROPOLITANA (CUAUTITLÁN)</option>
-                            <option value="metro-teoloyucan">ZONA METROPOLITANA (TEOLOYUCAN)</option>
-                        </select>
-                    </div>
+        <div class="branches-content">
+            <div class="branches-left">
+                <div class="zone-selector glass">
+                    <label for="zoneSelect">
+                        <i data-lucide="filter" size="16"></i>
+                        Selecciona una zona:
+                    </label>
+                    <select id="zoneSelect" onchange="filterBranches(this.value)">
+                        <option value="">Todas las sucursales</option>
+                        <option value="cdmx">Ciudad de México</option>
+                        <option value="edomex">Estado de México</option>
+                        <option value="guadalajara">Guadalajara</option>
+                        <option value="monterrey">Monterrey</option>
+                        <option value="puebla">Puebla</option>
+                        <option value="queretaro">Querétaro</option>
+                        <option value="tijuana">Tijuana</option>
+                        <option value="leon">León</option>
+                    </select>
+                </div>
 
-                    <div class="branches-list">
-                        <div class="zone-group" data-zone="centro-san-jeronimo">
-                            <h3>
-                                <i data-lucide="building" size="18"></i>
-                                ZONA CENTRO (SAN JERÓNIMO)
-                            </h3>
-                            <div class="branch-card glass">
-                                <div class="branch-icon">
-                                    <i data-lucide="map-pin"></i>
-                                </div>
-                                <h4 class="branch-title">Sucursal Matriz</h4>
-                                <p class="branch-address">
-                                    <i data-lucide="map-pin" size="14"></i>
-                                    Av. Contreras #246-304, Col. San Jerónimo Lídice, C.P. 10200
-                                </p>
-                                <div class="branch-details">
-                                    <div class="branch-info">
-                                        <i data-lucide="clock" size="14"></i>
-                                        <span>Lun - Vie: 9:00 - 18:00</span>
-                                    </div>
-                                    <div class="branch-info">
-                                        <i data-lucide="phone" size="14"></i>
-                                        <span>(55) 5595-09-26</span>
-                                    </div>
-                                </div>
-                                <a href="https://maps.google.com" class="branch-link" target="_blank">
-                                    <i data-lucide="navigation" size="14"></i>
-                                    <span>Ver en Mapa</span>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="zone-group" data-zone="centro-aguascalientes">
-                            <h3>
-                                <i data-lucide="building" size="18"></i>
-                                ZONA CENTRO (AGUASCALIENTES)
-                            </h3>
-                            <div class="branch-card glass">
-                                <div class="branch-icon">
-                                    <i data-lucide="map-pin"></i>
-                                </div>
-                                <h4 class="branch-title">Sucursal Aguascalientes</h4>
-                                <p class="branch-address">
-                                    <i data-lucide="map-pin" size="14"></i>
-                                    Av. Aguascalientes #123, Centro, Aguascalientes
-                                </p>
-                                <div class="branch-details">
-                                    <div class="branch-info">
-                                        <i data-lucide="clock" size="14"></i>
-                                        <span>Lun - Vie: 9:00 - 18:00</span>
-                                    </div>
-                                    <div class="branch-info">
-                                        <i data-lucide="phone" size="14"></i>
-                                        <span>(449) 123-45-67</span>
-                                    </div>
-                                </div>
-                                <a href="https://maps.google.com" class="branch-link" target="_blank">
-                                    <i data-lucide="navigation" size="14"></i>
-                                    <span>Ver en Mapa</span>
-                                </a>
-                            </div>
-                        </div>
-
-                        <!-- Más sucursales siguiendo el mismo patrón -->
+                <div class="search-box glass">
+                    <label for="addressSearch">
+                        <i data-lucide="search" size="16"></i>
+                        Buscar por dirección:
+                    </label>
+                    <div class="search-input-container">
+                        <input 
+                            type="text" 
+                            id="addressSearch" 
+                            placeholder="Ingresa tu dirección..."
+                            onkeypress="handleSearchKeyPress(event)"
+                        >
+                        <button type="button" onclick="searchNearestBranch()" class="search-btn">
+                            <i data-lucide="navigation" size="16"></i>
+                            Buscar
+                        </button>
                     </div>
                 </div>
 
-                <div class="branches-right">
-                    <div id="branchesMap" class="branches-map glass">
-                        <div class="map-placeholder">
-                            <i data-lucide="map" size="48"></i>
-                            <p>Mapa de Sucursales</p>
-                        </div>
+                <div class="branches-list" id="branchesList">
+                    <!-- Las sucursales se cargarán dinámicamente -->
+                </div>
+            </div>
+
+            <div class="branches-right">
+                <div id="googleMap" class="google-map glass">
+                    <div class="map-loading">
+                        <i data-lucide="loader-2" size="48"></i>
+                        <p>Cargando mapa...</p>
                     </div>
+                </div>
+                
+                <div class="map-controls">
+                    <button onclick="centerMapOnUser()" class="map-control-btn">
+                        <i data-lucide="crosshair" size="16"></i>
+                        Mi ubicación
+                    </button>
+                    <button onclick="showAllBranches()" class="map-control-btn">
+                        <i data-lucide="maximize-2" size="16"></i>
+                        Ver todas
+                    </button>
                 </div>
             </div>
         </div>
-    </section>
+
+        <!-- Sucursal destacada -->
+        <div class="featured-branch glass">
+            <div class="featured-branch-content">
+                <div class="featured-branch-info">
+                    <h3>
+                        <i data-lucide="star" size="20"></i>
+                        Sucursal Matriz - San Jerónimo
+                    </h3>
+                    <p class="featured-address">
+                        <i data-lucide="map-pin" size="16"></i>
+                        Av. Contreras #246-304, Col. San Jerónimo Lídice, C.P. 10200, CDMX
+                    </p>
+                    <div class="featured-details">
+                        <div class="detail-item">
+                            <i data-lucide="clock" size="16"></i>
+                            <span>Lun - Vie: 9:00 - 18:00 hrs | Sáb: 9:00 - 14:00 hrs</span>
+                        </div>
+                        <div class="detail-item">
+                            <i data-lucide="phone" size="16"></i>
+                            <a href="tel:5555950926">(55) 5595-0926</a>
+                        </div>
+                        <div class="detail-item">
+                            <i data-lucide="mail" size="16"></i>
+                            <a href="mailto:info@prestium.com">info@prestium.com</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="featured-branch-actions">
+                    <a href="https://wa.me/525555950926" class="btn btn-primary" target="_blank">
+                        <i data-lucide="message-circle" size="16"></i>
+                        WhatsApp
+                    </a>
+                    <button onclick="getDirections('19.368900,-99.189200')" class="btn btn-secondary">
+                        <i data-lucide="navigation" size="16"></i>
+                        Cómo llegar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- FAQ Section -->
     <section id="preguntas" class="faq-section">
@@ -1248,7 +1256,7 @@
 
     <!-- Chat Widget -->
     <div class="chat-widget">
-        <button class="chat-button">
+        <button class="chat-button">    
             <i data-lucide="message-circle"></i>
             <span class="chat-badge">1</span>
         </button>
@@ -1258,5 +1266,6 @@
     <script>
         lucide.createIcons();
     </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC1yMIt5xSm1MEyStJXJ0A7GHxoH3jipQk&callback=initMap" async defer></script>
 </body>
 </html>
