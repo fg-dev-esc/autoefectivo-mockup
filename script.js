@@ -114,20 +114,28 @@ const branches = [
 function showSlide(index) {
     const slides = document.querySelectorAll('.slide');
     const dots = document.querySelectorAll('.dot');
-    
+    const heroImages = [
+        './img/hero.jpg',
+        './img/hero2.jpg',
+        './img/hero3.jpg',
+        './img/hero4.jpg'
+    ];
     if (!slides.length) return;
-    
     if (index >= slides.length) currentSlideIndex = 0;
     else if (index < 0) currentSlideIndex = slides.length - 1;
     else currentSlideIndex = index;
-    
     slides.forEach((slide, i) => {
         slide.classList.toggle('active', i === currentSlideIndex);
     });
-    
     dots.forEach((dot, i) => {
         dot.classList.toggle('active', i === currentSlideIndex);
     });
+    // Cambiar la imagen de fondo según el slide actual
+    const heroSlider = document.querySelector('.hero-slider');
+    if (heroSlider) {
+        const imgIndex = currentSlideIndex % heroImages.length;
+        heroSlider.style.backgroundImage = `url('${heroImages[imgIndex]}')`;
+    }
 }
 
 function changeSlide(direction) {
@@ -990,6 +998,19 @@ function debounce(func, wait) {
 
 // --- INICIALIZACIÓN PRINCIPAL ---
 document.addEventListener('DOMContentLoaded', function() {
+    // Cambiar aleatoriamente el fondo del hero-slider
+    const heroImages = [
+        './img/hero.jpg',
+        './img/hero2.jpg',
+        './img/hero3.jpg',
+        './img/hero4.jpg'
+    ];
+    const randomHero = heroImages[Math.floor(Math.random() * heroImages.length)];
+    const heroSlider = document.querySelector('.hero-slider');
+    if (heroSlider) {
+        heroSlider.style.backgroundImage = `url('${randomHero}')`;
+    }
+    
     showSlide(0);
     
     // Auto-play slider

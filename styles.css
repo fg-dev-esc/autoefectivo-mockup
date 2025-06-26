@@ -178,10 +178,30 @@ body {
   height: 100vh;
   overflow: hidden;
   background: var(--bg-secondary);
-  background-image: url('./img/hero-prestium2.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  transition: background-image 1s linear;
+}
+
+.hero-slider::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 1;
+  transition: opacity 1s;
+  pointer-events: none;
+}
+
+.hero-slider.bg-fade {
+  /* Se usará para activar la transición */
 }
 
 .particles {
