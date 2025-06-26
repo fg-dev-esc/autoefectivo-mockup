@@ -115,10 +115,9 @@ function showSlide(index) {
     const slides = document.querySelectorAll('.slide');
     const dots = document.querySelectorAll('.dot');
     const heroImages = [
-        './img/hero.jpg',
-        './img/hero2.jpg',
-        './img/hero3.jpg',
-        './img/hero4.jpg'
+        './img/1.jpg',
+        './img/2.jpg',
+        './img/3.jpg',
     ];
     if (!slides.length) return;
     if (index >= slides.length) currentSlideIndex = 0;
@@ -321,78 +320,6 @@ function initGoogleMaps() {
     const mapOptions = {
         zoom: 6,
         center: { lat: 23.6345, lng: -102.5528 },
-        styles: [
-            {
-                "featureType": "all",
-                "elementType": "geometry.fill",
-                "stylers": [{"color": "#1a1a1a"}]
-            },
-            {
-                "featureType": "all",
-                "elementType": "labels.text.fill",
-                "stylers": [{"color": "#ffffff"}]
-            },
-            {
-                "featureType": "all",
-                "elementType": "labels.text.stroke",
-                "stylers": [{"color": "#000000"}, {"lightness": 13}]
-            },
-            {
-                "featureType": "administrative",
-                "elementType": "geometry.fill",
-                "stylers": [{"color": "#000000"}]
-            },
-            {
-                "featureType": "administrative",
-                "elementType": "geometry.stroke",
-                "stylers": [{"color": "#144b53"}, {"lightness": 14}, {"weight": 1.4}]
-            },
-            {
-                "featureType": "landscape",
-                "elementType": "all",
-                "stylers": [{"color": "#141414"}]
-            },
-            {
-                "featureType": "poi",
-                "elementType": "geometry",
-                "stylers": [{"color": "#0c4152"}, {"lightness": 5}]
-            },
-            {
-                "featureType": "road.highway",
-                "elementType": "geometry.fill",
-                "stylers": [{"color": "#b01f18"}]
-            },
-            {
-                "featureType": "road.highway",
-                "elementType": "geometry.stroke",
-                "stylers": [{"color": "#FF9234"}, {"lightness": 25}]
-            },
-            {
-                "featureType": "road.arterial",
-                "elementType": "geometry.fill",
-                "stylers": [{"color": "#000000"}]
-            },
-            {
-                "featureType": "road.arterial",
-                "elementType": "geometry.stroke",
-                "stylers": [{"color": "#0b3d51"}, {"lightness": 16}]
-            },
-            {
-                "featureType": "road.local",
-                "elementType": "geometry",
-                "stylers": [{"color": "#000000"}]
-            },
-            {
-                "featureType": "transit",
-                "elementType": "all",
-                "stylers": [{"color": "#146474"}]
-            },
-            {
-                "featureType": "water",
-                "elementType": "all",
-                "stylers": [{"color": "#021019"}]
-            }
-        ],
         mapTypeControl: false,
         streetViewControl: false,
         fullscreenControl: true,
@@ -1000,10 +927,9 @@ function debounce(func, wait) {
 document.addEventListener('DOMContentLoaded', function() {
     // Cambiar aleatoriamente el fondo del hero-slider
     const heroImages = [
-        './img/hero.jpg',
-        './img/hero2.jpg',
-        './img/hero3.jpg',
-        './img/hero4.jpg'
+        './img/1.jpg',
+        './img/2.jpg',
+        './img/3.jpg',
     ];
     const randomHero = heroImages[Math.floor(Math.random() * heroImages.length)];
     const heroSlider = document.querySelector('.hero-slider');

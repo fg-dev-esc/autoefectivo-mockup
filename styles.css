@@ -179,7 +179,7 @@ body {
   overflow: hidden;
   background: var(--bg-secondary);
   background-size: cover;
-  background-position: center;
+  background-position: 100% 00%;
   background-repeat: no-repeat;
   transition: background-image 1s linear;
 }
@@ -1265,7 +1265,7 @@ body {
 
 /* Google Maps Container */
 .google-map {
-  height: 500px;
+  height: 785px;
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-color);
   overflow: hidden;
@@ -2175,4 +2175,42 @@ body {
     .branch-action-btn {
         flex: none;
     }
+}
+
+/* Estilos para el filtro de zona */
+.zone-selector {
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  margin-bottom: 2rem;
+  background: var(--bg-card);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.zone-selector label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--text-primary);
+}
+
+.zone-selector select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  color: var(--text-primary);
+  font-size: 1rem;
+  transition: var(--transition);
+  margin-top: 0.5rem;
+  font-family: inherit;
+}
+
+.zone-selector select:focus {
+  outline: none;
+  border-color: var(--accent-green);
+  box-shadow: 0 0 0 3px rgba(176, 31, 24, 0.1);
 }
